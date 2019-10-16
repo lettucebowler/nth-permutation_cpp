@@ -7,11 +7,12 @@ using std::cout;
 using std::endl;
 using std::vector;
 
-string nthletter(int partition, vector<std::string> sorted, int t, string nperm) {
-  int i = 0;
-  int k = 0;
-  int index = sorted.size() - nperm.length();
-  while()
+int find_factorial(int input) {
+  int temp = 1;
+  for(int i = 1; i <= input; i++) {
+    temp *= i;
+  }
+  return temp;
 }
 
 int main(int argc, char *argv[]) {
@@ -30,12 +31,8 @@ int main(int argc, char *argv[]) {
 
   input = argv[1];
   // cout << "input : " << input << endl;
-  letters = input.length();
-  factorial = 1;
-
-  for(int k = 1; k <= letters; k++) {
-    factorial *= (k);
-  }
+  letters = input.length();\
+  factorial = find_factorial(letters);
   //cout << p << endl;
   n = atoi(argv[2]);
   if(n > factorial || n < 1) {
@@ -54,10 +51,27 @@ int main(int argc, char *argv[]) {
 
   int partition = factorial;
   string nperm;
+
+  vector<std::string> sorted2;
   for(int i = 0; i < sorted.size(); i++) {
-    partition /= (letters - i)
-    int t = n / partition;
-    nperm += nthletter(partition, sorted, t, nperm);
+    sorted2.push_back(sorted[i]);
+  }
+
+  int q = n - 1;
+  for(int i = 0; i < sorted.size(); i++) {
+    int index = q;
+    index /= find_factorial(sorted2.size() - 1);
+    index = index % sorted2.size();
+
+    for(int i = 0; i < sorted2.size(); i++) {
+      cout << sorted2[i];
+    }
+    cout << endl;
+    cout << "index : " << index << endl;
+    nperm += sorted2[index];
+    if(index != 0) {
+    sorted2.erase(sorted2.begin()+index);
+    }
   }
 
   cout << n << "th permutation : " << nperm << endl;
