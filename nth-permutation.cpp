@@ -1,11 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-using std::string;
-using std::cin;
-using std::cout;
-using std::endl;
-using std::vector;
+using namespace std;
 
 int find_factorial(int input) {
   int temp = 1;
@@ -34,12 +30,15 @@ int main(int argc, char *argv[]) {
     cout << "n : ";
     cin >> n;
 	}
+  else {
+    input = argv[1];
+    n = atoi(argv[2]);
+  }
 
   //Take in input from arguments
-  input = argv[1];
   letters = input.length();\
   factorial = find_factorial(letters);
-  n = atoi(argv[2]);
+
   if(n > factorial || n < 1) {
     cout << "n out of bounds! mush be between " << 1 << " and " << factorial << "!" << endl;
     return 0;
