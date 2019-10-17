@@ -23,8 +23,8 @@ int main(int argc, char *argv[]) {
 
   //Check for proper number of arguments
   if (argc < 3) {
-		printf("Missing arguments!\n\n");
-		printf("Usage: nth-permutation string n\n\n");
+	cout << "Missing arguments!\n\n";
+	cout << "Usage: nth-permutation string n\n\n";
     cout << "String to permute : ";
     cin >> input;
     cout << "n : ";
