@@ -12,7 +12,6 @@ unsigned long long find_factorial(int input) {
 }
 
 int main(int argc, char *argv[]) {
-
   string input;
   string nperm;
   int letters;
@@ -59,11 +58,6 @@ int main(int argc, char *argv[]) {
   for(int i = 0; i < sorted.size(); i++) {
     sorted2.push_back(sorted[i]);
   }
-  // cout << "    ";
-  // for(int i = 0; i < sorted2.size(); i++) {
-  //   cout << sorted2[i];
-  // }
-  // cout << endl;
 
   int q = n - 1;
   for(int i = 0; i < sorted.size(); i++) {
@@ -80,14 +74,8 @@ int main(int argc, char *argv[]) {
     else {
       sorted2.erase(sorted2.begin());
     }
-    // cout << index << " : ";
-    // for(int i = 0; i < sorted2.size(); i++) {
-    //   cout << sorted2[i];
-    // }
-    // cout << endl;
   }
-
+  
   cout << n << "th permutation : " << nperm << endl;
-
   return 0;
 }
