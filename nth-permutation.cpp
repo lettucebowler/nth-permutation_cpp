@@ -3,8 +3,8 @@
 #include <algorithm>
 using namespace std;
 
-int find_factorial(int input) {
-  int temp = 1;
+unsigned long long find_factorial(int input) {
+  unsigned long long temp = 1;
   for(int i = 1; i <= input; i++) {
     temp *= i;
   }
@@ -16,15 +16,16 @@ int main(int argc, char *argv[]) {
   string input;
   string nperm;
   int letters;
-  int factorial;
-  int partition;
+  unsigned long long factorial;
+  unsigned long long partition;
   int n;
   vector<std::string> sorted;
 
   //Check for proper number of arguments
   if (argc < 3) {
-	cout << "Missing arguments!\n\n";
-	cout << "Usage: nth-permutation string n\n\n";
+		cout << "Missing arguments!" << endl << endl;
+		cout << "Usage: nth-permutation string n" << endl << endl;
+    cout << "This program can't properly compute results with repeeats" << endl;
     cout << "String to permute : ";
     cin >> input;
     cout << "n : ";
@@ -58,6 +59,11 @@ int main(int argc, char *argv[]) {
   for(int i = 0; i < sorted.size(); i++) {
     sorted2.push_back(sorted[i]);
   }
+  // cout << "    ";
+  // for(int i = 0; i < sorted2.size(); i++) {
+  //   cout << sorted2[i];
+  // }
+  // cout << endl;
 
   int q = n - 1;
   for(int i = 0; i < sorted.size(); i++) {
@@ -74,6 +80,11 @@ int main(int argc, char *argv[]) {
     else {
       sorted2.erase(sorted2.begin());
     }
+    // cout << index << " : ";
+    // for(int i = 0; i < sorted2.size(); i++) {
+    //   cout << sorted2[i];
+    // }
+    // cout << endl;
   }
 
   cout << n << "th permutation : " << nperm << endl;
