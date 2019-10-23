@@ -31,6 +31,7 @@ int main(int argc, char *argv[]) {
     cout << "n : ";
     cin >> n;
 	}
+  //Poplate variables with command-line arguments
   else {
     input = argv[1];
     // n = (unsigned long long)atoi(argv[2]);
@@ -42,7 +43,8 @@ int main(int argc, char *argv[]) {
   factorial = find_factorial(letters);
 
   if(n > factorial || n < 1) {
-    cout << "n out of bounds! mush be between " << 1 << " and " << factorial << "!" << endl;
+    cout << "n out of bounds! mush be and integer between " << 1
+         << " and " << factorial << "!" << endl;
     return 0;
   }
 
@@ -61,6 +63,8 @@ int main(int argc, char *argv[]) {
     sorted2.push_back(sorted[i]);
   }
 
+  //Find next letter in the specified permutation, add it to the end,
+  //and remove that letter from the list of available letters.
   int q = n - 1;
   for(int i = 0; i < sorted.size(); i++) {
     //calculate index of next letter to add to nperm
