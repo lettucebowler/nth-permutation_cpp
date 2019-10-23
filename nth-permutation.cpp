@@ -17,14 +17,15 @@ int main(int argc, char *argv[]) {
   int letters;
   unsigned long long factorial;
   unsigned long long partition;
-  int n;
+  unsigned long long n;
   vector<std::string> sorted;
 
   //Check for proper number of arguments
   if (argc < 3) {
-		cout << "Missing arguments!" << endl << endl;
-		cout << "Usage: nth-permutation string n" << endl << endl;
-    cout << "This program can't properly compute results with repeeats" << endl;
+		cout << "Missing arguments!" << endl;
+		cout << "Usage: nth-permutation string n" << endl;
+    cout << "This program can't properly compute results with repeat letters"
+         << endl;
     cout << "String to permute : ";
     cin >> input;
     cout << "n : ";
@@ -32,7 +33,8 @@ int main(int argc, char *argv[]) {
 	}
   else {
     input = argv[1];
-    n = atoi(argv[2]);
+    // n = (unsigned long long)atoi(argv[2]);
+    sscanf(argv[2], "%llu", &n);
   }
 
   //Take in input from arguments
@@ -75,7 +77,7 @@ int main(int argc, char *argv[]) {
       sorted2.erase(sorted2.begin());
     }
   }
-  
+
   cout << n << "th permutation : " << nperm << endl;
   return 0;
 }
