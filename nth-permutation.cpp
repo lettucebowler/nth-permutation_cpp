@@ -67,19 +67,11 @@ int main(int argc, char *argv[]) {
   //and remove that letter from the list of available letters.
   int q = n - 1;
   for(int i = 0; i < sorted.size(); i++) {
-    //calculate index of next letter to add to nperm
     int index = q;
     index /= find_factorial(sorted2.size() - 1);
     index = index % sorted2.size();
-    //add selected letter to string
     nperm += sorted2[index];
-    //Erase used letter from list of available letters
-    if(index != 0) {
     sorted2.erase(sorted2.begin() + index);
-    }
-    else {
-      sorted2.erase(sorted2.begin());
-    }
   }
 
   cout << n << "th permutation : " << nperm << endl;
