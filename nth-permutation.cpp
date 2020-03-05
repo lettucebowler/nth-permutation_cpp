@@ -67,9 +67,7 @@ int main(int argc, char *argv[]) {
   //and remove that letter from the list of available letters.
   int q = n - 1;
   for(int i = 0; i < sorted.size(); i++) {
-    int index = q;
-    index /= find_factorial(sorted2.size() - 1);
-    index = index % sorted2.size();
+    int index = q / find_factorial(sorted2.size()-1) % sorted2.size();
     nperm += sorted2[index];
     sorted2.erase(sorted2.begin() + index);
   }
