@@ -16,7 +16,6 @@ int main(int argc, char *argv[]) {
   string nperm;
   int letters;
   unsigned long long factorial;
-  unsigned long long partition;
   unsigned long long n;
   vector<std::string> sorted;
 
@@ -57,7 +56,6 @@ int main(int argc, char *argv[]) {
 
   //Prepare data for use
   sort(sorted.begin(), sorted.end());
-  partition = factorial;
   vector<std::string> sorted2;
   for(int i = 0; i < sorted.size(); i++) {
     sorted2.push_back(sorted[i]);
